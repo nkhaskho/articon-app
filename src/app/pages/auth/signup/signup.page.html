@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Créer un compte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">signup</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-col size="6" offset="3">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input [(ngModel)]="user.username" type="text" placeholder="foulen">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input [(ngModel)]="user.email" type="text" placeholder="foulen@email.com">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Full Name</ion-label>
+          <ion-input [(ngModel)]="user.fullname" type="text" placeholder="Foulen Fopulen" />
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+        </ion-item>
+        <!--
+      <ion-item>
+        <ion-label position="stacked">Role</ion-label> 
+        <ion-select value="peperoni" placeholder="Select Pizza">
+          <ion-option value="admin">Admin</ion-option>
+          <ion-option value="client">Client</ion-option>
+        </ion-select>
+        
+      </ion-item>
+      -->
+        <ion-item>
+          <ion-label position="stacked">Registration Num°</ion-label>
+          <ion-input [(ngModel)]="user.registration" type="text"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="signUp()">Sign in</ion-button>
+        <ion-item>
+          <ion-label>Already have an account? <a href="/login">Se connecter</a></ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+  </ion-grid>
+</ion-content>

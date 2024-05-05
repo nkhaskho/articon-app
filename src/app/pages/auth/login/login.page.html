@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Authentifcation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">signup</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-col size="6" offset="3">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input type="text" placeholder="foulen">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block">Se connecter</ion-button>
+        <ion-item routerLink="/signup">
+          <ion-label>Don't have an account? <a href="/signup">Créer un compte</a></ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-grid>
+</ion-content>
