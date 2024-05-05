@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonItem, IonList, IonGrid, IonLabel, IonInput, IonButton, IonSelect } from '@ionic/angular/standalone';
+import { MenuController, IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonItem, IonList, IonGrid, IonLabel, IonInput, IonButton, IonSelect } from '@ionic/angular/standalone';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -16,10 +16,14 @@ export class SignupPage implements OnInit {
 
   user: User = new User();
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private menuCtrl: MenuController) { }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
   }
 
   signUp() {

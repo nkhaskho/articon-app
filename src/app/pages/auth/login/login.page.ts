@@ -16,9 +16,11 @@ export class LoginPage implements OnInit {
   constructor(private menuCtrl: MenuController) { }
 
   ngOnInit() {
-    this.menuCtrl.enable(false, 'menu');
     console.log();
-    
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
   }
 
 }
