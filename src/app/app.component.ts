@@ -26,7 +26,8 @@ export class AppComponent {
   }
     
   signOut() {
-    this.menuCtrl.close('menu');
+    this.menuCtrl.enable(true);
     this.router.navigate(["/login"])
   }
+
 }

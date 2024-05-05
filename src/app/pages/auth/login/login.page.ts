@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {  } from "@angular/core/";
 import { IonContent, IonHeader, IonTitle, IonToolbar, MenuController, IonGrid, IonCol, IonList, IonItem, IonLabel, IonInput, IonButton, IonText } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, MenuController, IonGrid, I
 })
 export class LoginPage implements OnInit {
 
-  constructor(private menuCtrl: MenuController) { }
+  constructor(private menuCtrl: MenuController, private router: Router) { }
 
   ngOnInit() {
     console.log();
@@ -21,6 +22,10 @@ export class LoginPage implements OnInit {
 
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
+  }
+
+  login() {
+    this.router.navigate(["/"])
   }
 
 }
