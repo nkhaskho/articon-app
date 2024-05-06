@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SignupPage implements OnInit {
 
   user: User = new User();
+  message: string = "";
 
   constructor(private authService: AuthService, private menuCtrl: MenuController) { }
 
@@ -31,10 +32,11 @@ export class SignupPage implements OnInit {
     this.authService.signUp(this.user).subscribe(
       data => {
         console.log(data);
-        // TODO: 
+        this.message = `User "${this.user.username}" created.`;
+        this.user = new User(); 
       },
-      err => console.log(err)
-      // TODO
+      err => this.message = `Error while adding user.`
+
     )
   }
 
