@@ -24,22 +24,12 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     this.menuCtrl.enable(true);
-    this.products.push(
-      {
-        name: "product 1", 
-        category: "categ 1",
-        quantity: 10, 
-        price: 12
-      }
-    )
-    this.products.push(
-      {
-        name: "product 2", 
-        category: "cat 1",
-        quantity: 200, 
-        price: 140
-      }
-    )
+    this.productService.getProducts('').toPromise()
+    .then(res => {
+      console.log(res);
+      if (res) this.products = res;
+    })
+    .catch(err => console.log)
   }
 
 }

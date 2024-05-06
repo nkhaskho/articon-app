@@ -17,12 +17,17 @@
         <ion-row>
           <ion-col size="6">
             <ion-card-header>
-              <ion-card-subtitle>
+              <ion-card-title>
                 <b>{{product.name}}</b>
-              </ion-card-subtitle>
+              </ion-card-title>
               <ion-item lines="none">
-                <ion-badge slot="start">{{product.category}}</ion-badge>
+                <ion-badge slot="start" color="secondary">
+                  Category {{product.category}}
+                </ion-badge>
               </ion-item>
+              <ion-label>Price /Unit: {{product.price}} TND</ion-label>
+
+              <ion-label color="danger" *ngIf="product.quantity===0">Out of stock</ion-label>
             </ion-card-header>
           </ion-col>
           <ion-col size="6">

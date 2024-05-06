@@ -5,6 +5,7 @@ import { IonSelect, IonSelectOption, IonContent, IonHeader, IonTitle, IonToolbar
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/products/product.service';
 import { ProductCategory } from 'src/app/models/product-category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -18,7 +19,8 @@ export class AddProductPage implements OnInit {
   product: Product = new Product();
   categories: ProductCategory[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+            private router: Router) { }
 
   ngOnInit() {
     this.productService.getCategories().subscribe(
@@ -28,7 +30,10 @@ export class AddProductPage implements OnInit {
   }
 
   add() {
-    console.log(this.product);
+    this.productService.addProduct(this.product).subscribe(
+      data => this.router.navigate(['/products']),
+      err => console.log(err)
+    )
   }
 
 }
