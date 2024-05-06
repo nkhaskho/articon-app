@@ -13,9 +13,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories() {
-    let headers = new HttpHeaders().set('Access-Control-Allow-Origin',"http://localhost:4200/");
-    return this.http.get<ProductCategory[]>(this.endpoint+"/categories", {headers: headers});
+  getCategories(): Observable<ProductCategory[]> {
+    return this.http.get<ProductCategory[]>(this.endpoint+"/categories/");
   }
 
   getProducts(): Observable<Product[]> {
