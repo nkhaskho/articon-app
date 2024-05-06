@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MenuController, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp } from 'ionicons/icons';
+import { heartOutline, heartSharp, archiveOutline, archiveSharp, personOutline, personSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bagHandle, bagHandleOutline, homeOutline, cartOutline, cartSharp, homeSharp } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +15,14 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/folder/home', icon: 'home' },
-    { title: 'Products', url: '/folder/products', icon: 'card' },
+    { title: 'Profile', url: '/folder/profile', icon: 'person' },
+    { title: 'Products', url: '/folder/products', icon: 'cart' },
     { title: 'Events', url: '/folder/events', icon: 'archive' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
   ];
 
   constructor(private menuCtrl: MenuController, private router: Router) {
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+    addIcons({ bagHandle, bagHandleOutline, homeSharp, homeOutline, cartOutline, cartSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, personOutline, personSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
     
   signOut() {
