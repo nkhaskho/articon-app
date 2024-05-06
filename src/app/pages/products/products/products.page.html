@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="search">
+      <ion-icon slot="end" name="search"></ion-icon>
+    </ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-card *ngFor="let product of products">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card-header>
+              <ion-card-subtitle>
+                <b>{{product.name}}</b>
+              </ion-card-subtitle>
+              <ion-item lines="none">
+                <ion-badge slot="start">{{product.category}}</ion-badge>
+              </ion-item>
+            </ion-card-header>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img class="product-img" src="https://ionicframework.com/docs/img/demos/card-media.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button href="/products/add">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

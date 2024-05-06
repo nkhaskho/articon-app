@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Add product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>New product</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Select a category</ion-label>
+          <ion-input type="text" [(ngModel)]="product.category"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Product name</ion-label>
+          <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Price</ion-label>
+          <ion-input type="text" [(ngModel)]="product.price"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Quantity</ion-label>
+          <ion-input type="number" [(ngModel)]="product.quantity"></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-button (click)="add()" expand="block" shape="round">
+        Add product
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
