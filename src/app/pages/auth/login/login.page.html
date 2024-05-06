@@ -5,22 +5,28 @@
 </ion-header>
 
   <ion-grid>
-    <ion-col size="6" offsetMd="3">
-      <ion-list>
-        <ion-item>
-          <ion-label position="stacked">Username</ion-label>
-          <ion-input type="text" placeholder="foulen">
-          </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-
-        <ion-button expand="block" (click)="login()">Se connecter</ion-button>
-        <ion-item position="center">
-          <ion-label>Don't have an account? <a href="/signup">Créer un compte</a></ion-label>
-        </ion-item>
-      </ion-list>
+    <ion-col sizeMd="6" offsetMd="3">
+      <ion-card>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label position="stacked">Username</ion-label>
+              <ion-input type="text" placeholder="foulen">
+              </ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+            <br><br>
+            <ion-button expand="block" (click)="login()">Se connecter</ion-button>
+            <br>
+            <ion-item lines="none">
+              <ion-label>Don't have an account? <a href="/signup">Sign-up</a></ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
     </ion-col>
   </ion-grid>

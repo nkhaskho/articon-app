@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MenuController, IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonItem, IonList, IonGrid, IonLabel, IonInput, IonButton, IonSelect } from '@ionic/angular/standalone';
+import { IonSelectOption, MenuController, IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonItem, IonList, IonGrid, IonLabel, IonInput, IonButton, IonSelect, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [IonButton, IonInput, IonLabel, IonGrid, IonList, IonItem, IonCol, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonSelect, IonSelectOption, IonCardContent, IonCard, IonButton, IonInput, IonLabel, IonGrid, IonList, IonItem, IonCol, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class SignupPage implements OnInit {
 

@@ -4,48 +4,52 @@
   </ion-toolbar>
 </ion-header>
 
-  
-  <ion-grid>
-    <ion-col size="6" offset="3">
-      <ion-list>
-        <ion-item>
-          <ion-label position="stacked">Username</ion-label>
-          <ion-input [(ngModel)]="user.username" type="text" placeholder="foulen">
-          </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Email</ion-label>
-          <ion-input [(ngModel)]="user.email" type="text" placeholder="foulen@email.com">
-          </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Full Name</ion-label>
-          <ion-input [(ngModel)]="user.fullname" type="text" placeholder="Foulen Fopulen" />
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input [(ngModel)]="user.password" type="password"></ion-input>
-        </ion-item>
-        <!--
-      <ion-item>
-        <ion-label position="stacked">Role</ion-label> 
-        <ion-select value="peperoni" placeholder="Select Pizza">
-          <ion-option value="admin">Admin</ion-option>
-          <ion-option value="client">Client</ion-option>
-        </ion-select>
-        
-      </ion-item>
-      -->
-        <ion-item>
-          <ion-label position="stacked">Registration Num°</ion-label>
-          <ion-input [(ngModel)]="user.registration" type="text"></ion-input>
-        </ion-item>
 
-        <ion-button expand="block" (click)="signUp()">Sign in</ion-button>
-        <ion-item>
-          <ion-label>Already have an account? <a href="/login">Se connecter</a></ion-label>
-        </ion-item>
+<ion-grid>
+  <ion-col size="6" offset="3">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Username</ion-label>
+            <ion-input [(ngModel)]="user.username" type="text" placeholder="foulen">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input [(ngModel)]="user.email" type="text" placeholder="foulen@email.com">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Full Name</ion-label>
+            <ion-input [(ngModel)]="user.fullname" type="text" placeholder="Foulen Fopulen" />
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+          </ion-item>
 
-      </ion-list>
-    </ion-col>
-  </ion-grid>
+          <ion-item>
+            <ion-label position="stacked">Role</ion-label>
+            <ion-select [(ngModel)]="user.role" placeholder="Select role">
+              <ion-select-option value="admin">Admin</ion-select-option>
+              <ion-select-option value="artisan">Artisan</ion-select-option>
+              <ion-select-option value="client">Client</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="user.role==='artisan'">
+            <ion-label position="stacked">Registration Num°</ion-label>
+            <ion-input [(ngModel)]="user.registration" type="text"></ion-input>
+          </ion-item>
+          <br>
+          <ion-button expand="block" (click)="signUp()">Sign up</ion-button>
+          <ion-item lines="none">
+            <ion-label>Already have an account? <a href="/login">Login</a></ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-grid>
