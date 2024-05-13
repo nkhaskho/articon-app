@@ -15,9 +15,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  createUser(user: User) {
-    this.users.push(user);
-    return user;
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(this.endpoint+'/'+id);
   }
 
   findAll(): Observable<User[]> {
