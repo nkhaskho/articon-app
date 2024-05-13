@@ -26,10 +26,7 @@ export class ProductsPage implements OnInit {
   ngOnInit() {
     this.menuCtrl.enable(true);
     this.productService.getProducts('').toPromise()
-    .then(res => {
-      console.log(res);
-      if (res) this.products = res;
-    })
+    .then(res => { if (res) this.products = res;})
     .catch(err => console.log)
   }
 
