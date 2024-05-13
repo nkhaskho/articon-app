@@ -26,15 +26,15 @@ export class ProductService {
   }
 
   getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(this.endpoint+'/'+id);
+    return this.http.get<Product>(this.endpoint+id);
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(this.endpoint+'/'+product.id, product);
+    return this.http.put<Product>(this.endpoint+product.id, product);
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.get<any>(this.endpoint+'/'+id);
+    return this.http.get<any>(this.endpoint+id);
   }
 
 }

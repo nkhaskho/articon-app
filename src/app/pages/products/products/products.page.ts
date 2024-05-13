@@ -6,6 +6,7 @@ import { add, addSharp, search, searchSharp } from "ionicons/icons";
 import { addIcons } from 'ionicons';
 import { ProductService } from 'src/app/services/products/product.service';
 import { Product } from 'src/app/models/product';
+import { ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-products',
