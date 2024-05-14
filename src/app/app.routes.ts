@@ -34,5 +34,9 @@ export const routes: Routes = [
   {
     path: 'profile',
     loadComponent: () => import('./pages/users/user/user.page').then( m => m.UserPage)
+  },  {
+    path: 'categories',
+    loadComponent: () => import('./pages/products/categories/categories.page').then( m => m.CategoriesPage)
   },
+
 ];

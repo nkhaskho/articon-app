@@ -17,6 +17,14 @@ export class ProductService {
     return this.http.get<ProductCategory[]>(this.endpoint+"categories/");
   }
 
+  addCategory(category: ProductCategory): Observable<ProductCategory> {
+    return this.http.post<ProductCategory>(this.endpoint+"categories/", category);
+  }
+
+  deleteCategory(id: number | undefined): Observable<any> {
+    return this.http.delete<any>(this.endpoint+"categories/"+id);
+  }
+
   getProducts(q: string): Observable<Product[]> {
     return this.http.get<Product[]>(this.endpoint);
   }
