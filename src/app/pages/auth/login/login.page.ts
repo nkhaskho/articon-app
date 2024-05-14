@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import {  } from "@angular/core/";
 import { IonContent, IonHeader, IonTitle, IonToolbar, MenuController, IonGrid, IonCol, IonList, IonItem, IonLabel, IonInput, IonButton, IonText, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { LoginCredential } from 'src/app/models/login-credential';
+import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,12 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private menuCtrl: MenuController, private router: Router) { }
+  loginInfo: LoginCredential = new LoginCredential();
+
+  constructor(private menuCtrl: MenuController, 
+    private userService: UserService,
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     console.log();
@@ -25,7 +33,22 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.router.navigate(["/"])
+    this.authService.logIn(this.loginInfo).toPromise()
+    .then(data => {
+      // save token f storage
+      if (data?.access) {
+        localStorage.setItem("token", data?.access);
+        let user_id = this.authService.parseJwt(data?.access)["user_id"]
+        localStorage.setItem("id", user_id)
+        // GET /api/users/{id}
+        this.userService.getUserById(user_id).toPromise()
+        .then(user => {
+          if (user) localStorage.setItem("role", user?.role)
+        })
+        this.router.navigate(["/"])
+      }})
+    .catch(err => console.log)
+    
   }
 
 }
