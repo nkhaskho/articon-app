@@ -18,11 +18,11 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Home', url: '/folder/home', icon: 'home', role: 'all' },
-    { title: 'Profile', url: '/folder/profile', icon: 'person', role: 'all' },
+    { title: 'Profile', url: '/profile', icon: 'person', role: 'all' },
     { title: 'Products', url: '/products', icon: 'cart', role: 'all' },
-    { title: 'Events', url: '/folder/events', icon: 'archive', role: 'all' },
+    { title: 'Events', url: '/events', icon: 'archive', role: 'all' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart', role: 'all' },
-    { title: 'Categories', url: '/folder/categories', icon: 'apps', role: 'admin' },
+    { title: 'Categories', url: '/categories', icon: 'apps', role: 'admin' },
     { title: 'Administration', url: '/folder/administration', icon: 'settings', role: 'admin' },
 
   ];
