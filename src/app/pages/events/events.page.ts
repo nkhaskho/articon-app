@@ -17,6 +17,8 @@ import { Event } from 'src/app/models/event';
 export class EventsPage implements OnInit {
 
   events: Event[] = [];
+  appStorage = localStorage;
+
   constructor(private menuCtrl: MenuController, private eventService: EventService) { 
     addIcons({add, addSharp, search, searchSharp});
   }

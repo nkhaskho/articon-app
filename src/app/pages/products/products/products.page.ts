@@ -18,6 +18,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 export class ProductsPage implements OnInit {
 
   products: Product[] = [];
+  appStorage = localStorage;
 
   constructor(private menuCtrl: MenuController, private productService: ProductService) { 
     addIcons({add, addSharp, search, searchSharp});
