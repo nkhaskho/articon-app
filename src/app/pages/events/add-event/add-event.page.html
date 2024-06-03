@@ -14,7 +14,9 @@
         <ion-item>
           <ion-label position="stacked">Select type</ion-label>
           <ion-select [(ngModel)]="event.type">
-            
+              <ion-select-option *ngFor="let type of eventTypes" value="{{type.type}}">
+                {{type.name}}
+              </ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
@@ -28,6 +30,10 @@
         <ion-item>
           <ion-label position="stacked">Date</ion-label>
           <ion-input type="date" [(ngModel)]="event.date"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Video</ion-label>
+          <ion-input type="text" [(ngModel)]="event.video"></ion-input>
         </ion-item>
       </ion-list>
       <br>

@@ -32,6 +32,11 @@
           <ion-label position="stacked">Quantity</ion-label>
           <ion-input type="number" [(ngModel)]="product.quantity"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Image</ion-label>
+          <ion-input type="text" [(ngModel)]="product.image"></ion-input>
+        </ion-item>
       </ion-list>
       <br>
       <ion-button (click)="add()" expand="block" shape="round">

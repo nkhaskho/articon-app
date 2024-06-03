@@ -16,13 +16,35 @@ import { Router } from '@angular/router';
 export class AddEventPage implements OnInit {
 
   event: Event = new Event();
+  eventTypes = [
+    {
+      "type": "commercial",
+      "name": "Commercial"
+    },
+    {
+      "type": "sejnen",
+      "name": "Sejnen"
+    },
+    {
+      "type": "region",
+      "name": "Region"
+    },
+    {
+      "type": "handicape",
+      "name": "Handicapé"
+    },
+    {
+      "type": "nouveau artisan",
+      "name": "Nouveau Artisan"
+    }
+  ]
   
 
   constructor(private productService: EventService,
             private router: Router) { }
 
   ngOnInit() {
-    
+    console.log();
   }
   add() {
     this.productService.addEvent(this.event).subscribe(

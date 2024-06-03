@@ -3,4 +3,5 @@ export class Workshop {
    title: string = "";
    description: string = "";
    date: Date = new Date();
+   video: string = "";
 }

@@ -5,6 +5,5 @@ export class Event {
     location: string = "";
     description: string= "";
     type: string = "";
-    image?: string = "";
-    
+    video?: string = "";
 }
