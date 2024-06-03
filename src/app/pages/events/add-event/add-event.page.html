@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>add-event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>New event</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Select type</ion-label>
+          <ion-select [(ngModel)]="event.type">
+            
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Event name</ion-label>
+          <ion-input type="text" [(ngModel)]="event.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">location</ion-label>
+          <ion-input type="text" [(ngModel)]="event.location"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Date</ion-label>
+          <ion-input type="date" [(ngModel)]="event.date"></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-button (click)="add()" expand="block" shape="round">
+        Add event
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

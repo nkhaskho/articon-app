@@ -6,7 +6,7 @@ export class User {
     email: string = "";
     fullname: string = "";
     region: string = "";
-    registration: string = "E12XXXXXX";
+    registration: string = "";
     password: string = "";
     role: UserRole = UserRole.CLIENT;
     // others

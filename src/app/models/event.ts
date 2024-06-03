@@ -3,5 +3,8 @@ export class Event {
     name: string = "";
     date: Date = new Date();
     location: string = "";
-    type: string = ""
+    description: string= "";
+    type: string = "";
+    image?: string = "";
+    
 }

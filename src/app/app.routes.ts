@@ -34,7 +34,8 @@ export const routes: Routes = [
   {
     path: 'profile',
     loadComponent: () => import('./pages/users/user/user.page').then( m => m.UserPage)
-  },  {
+  },
+  {
     path: 'categories',
     loadComponent: () => import('./pages/products/categories/categories.page').then( m => m.CategoriesPage)
   },
@@ -42,5 +43,15 @@ export const routes: Routes = [
     path: 'events',
     loadComponent: () => import('./pages/events/events.page').then( m => m.EventsPage)
   },
+  
+   
+  {
+    path: 'events/add',
+    loadComponent: () => import('./pages/events/add-event/add-event.page').then( m => m.AddEventPage)
+  },  {
+    path: 'workshop',
+    loadComponent: () => import('./pages/workshop/workshop.page').then( m => m.WorkshopPage)
+  },
+
 
 ];

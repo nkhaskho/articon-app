@@ -6,6 +6,7 @@ import { addIcons } from 'ionicons';
 import { addCircleOutline, addCircleSharp, createOutline, trashOutline, trashSharp } from 'ionicons/icons';
 import { ProductService } from 'src/app/services/products/product.service';
 import { ProductCategory } from 'src/app/models/product-category';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categories',
@@ -18,6 +19,8 @@ export class CategoriesPage implements OnInit {
 
   category: ProductCategory = new ProductCategory();
   categories: ProductCategory[] | undefined = [];
+
+
 
   constructor(private productService: ProductService) {
     addIcons({ trashOutline, trashSharp, createOutline, addCircleSharp });
@@ -36,8 +39,11 @@ export class CategoriesPage implements OnInit {
   }
 
   deleteCategory(id: number | undefined) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cette catégorie?")) {
     this.productService.deleteCategory(id).toPromise()
       .then(data => this.ngOnInit())
       .catch(err => console.log)
   }
-}
+}}
+
+

@@ -1,0 +1,33 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>workshop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input type="text" placeholder="search">
+      <ion-icon slot="end" name="search"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-card *ngFor="let workshop of workshops">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card-header>
+              <ion-card-title>
+                <a [routerLink]="['/workshop', workshop.id]">
+                  <b>{{workshop.title}}</b>
+                </a>
+              </ion-card-title>
+              <ion-label>description: {{workshop.description}}</ion-label><br>
+              <ion-label>date: {{workshop.date}} </ion-label>
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-list>
+</ion-content>
+-->
