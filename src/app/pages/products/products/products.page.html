@@ -35,10 +35,12 @@
           <ion-col size="6">
             <ion-img class="product-img" src="{{product.image}}"></ion-img>
           </ion-col>
-
          
         </ion-row>
-        
+        <ion-row>
+          <ion-button color="secondary" href="/products/{{product.id}}/edit">Edit</ion-button>
+          <ion-button color="danger" (click)="delete(product.id)">Delete</ion-button>
+        </ion-row>
       </ion-grid>
       
     </ion-card>

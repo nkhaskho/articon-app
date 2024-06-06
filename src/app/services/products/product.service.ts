@@ -38,7 +38,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(this.endpoint+product.id, product);
+    return this.http.put<Product>(this.endpoint+product.id+'/', product);
   }
 
   deleteProduct(id: number): Observable<any> {

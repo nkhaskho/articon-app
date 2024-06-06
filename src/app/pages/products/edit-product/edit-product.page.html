@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Edit product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Product {{product.id}}</ion-card-subtitle>
+      <ion-card-title>{{product.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Select category</ion-label>
+          <ion-select [(ngModel)]="product.category" ngDefaultControl>
+            <ion-select-option *ngFor="let cat of categories" value="{{cat.id}}">
+              {{cat.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Product name</ion-label>
+          <ion-input type="text" [(ngModel)]="product.name" ngDefaultControl></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Price</ion-label>
+          <ion-input type="number" [(ngModel)]="product.price" ngDefaultControl></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Quantity</ion-label>
+          <ion-input type="number" [(ngModel)]="product.quantity" ngDefaultControl></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Image</ion-label>
+          <ion-input type="text" [(ngModel)]="product.image" ngDefaultControl></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-button (click)="update()" expand="block" shape="round">
+        Update product
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

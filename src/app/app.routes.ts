@@ -43,14 +43,17 @@ export const routes: Routes = [
     path: 'events',
     loadComponent: () => import('./pages/events/events.page').then( m => m.EventsPage)
   },
-  
-   
   {
     path: 'events/add',
     loadComponent: () => import('./pages/events/add-event/add-event.page').then( m => m.AddEventPage)
-  },  {
+  },
+  {
     path: 'workshop',
     loadComponent: () => import('./pages/workshop/workshop.page').then( m => m.WorkshopPage)
+  },
+  {
+    path: 'products/:id/edit',
+    loadComponent: () => import('./pages/products/edit-product/edit-product.page').then( m => m.EditProductPage)
   },
 
 
