@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class AddProductPage implements OnInit {
 
   product: Product = new Product();
+  errors: Product = new Product();
   categories: ProductCategory[] = [];
 
   constructor(private productService: ProductService,
@@ -32,7 +33,7 @@ export class AddProductPage implements OnInit {
   add() {
     this.productService.addProduct(this.product).subscribe(
       data => this.router.navigate(['/products']),
-      err => console.log(err)
+      err => this.errors = err.error
     )
   }
 
