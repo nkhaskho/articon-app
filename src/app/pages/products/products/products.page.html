@@ -38,6 +38,7 @@
          
         </ion-row>
         <ion-row>
+          <ion-button color="medium" href="/products/{{product.id}}">Details</ion-button>
           <ion-button color="secondary" href="/products/{{product.id}}/edit">Edit</ion-button>
           <ion-button color="danger" (click)="delete(product.id)">Delete</ion-button>
         </ion-row>
@@ -45,7 +46,8 @@
       
     </ion-card>
   </ion-list>
-  <ion-fab *ngIf="appStorage.getItem('role')==='artisan'" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab *ngIf="appStorage.getItem('role')==='artisan' || appStorage.getItem('role')==='admin'"
+       vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button href="/products/add">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
