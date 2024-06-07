@@ -14,8 +14,8 @@
       <ion-list>
         <ion-item>
           <ion-label position="stacked">Select category</ion-label>
-          <ion-select [(ngModel)]="product.category" ngDefaultControl>
-            <ion-select-option *ngFor="let cat of categories" value="{{cat.id}}">
+          <ion-select [(ngModel)]="product.category">
+            <ion-select-option *ngFor="let cat of categories" [value]="cat.id">
               {{cat.name}}
             </ion-select-option>
           </ion-select>
