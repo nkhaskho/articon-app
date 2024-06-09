@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SignupPage implements OnInit {
 
   user: User = new User();
+  errors: User = new User();
   message: string = "";
   regions = [
     "Tunis",
@@ -40,7 +41,7 @@ export class SignupPage implements OnInit {
         this.message = `User "${this.user.username}" created.`;
         this.user = new User(); 
       },
-      err => this.message = `Error while adding user.`
+      err => this.errors = err.error
 
     )
   }
