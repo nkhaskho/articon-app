@@ -9,5 +9,6 @@ export class User {
     registration: string = "";
     password: string = "";
     role: UserRole = UserRole.CLIENT;
+    created_at: Date = new Date();
     // others
 }
