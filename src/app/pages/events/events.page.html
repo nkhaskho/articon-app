@@ -26,29 +26,33 @@
               <ion-card-title>
                 <a href="events/{{event.id}}">
                   <b>{{event.name}}</b>
+                  <ion-badge slot="start" color="secondary">
+                    {{event.type}}
+                  </ion-badge>
                 </a>
               </ion-card-title>
-              <ion-item lines="none">
-                <ion-badge slot="start" color="secondary">
-                  {{event.type}}
-                </ion-badge>
-              </ion-item>
             </ion-card-header>
           </ion-col>
-
-          <ion-label>location: {{event.location}} </ion-label><br>
-          <ion-label>description: {{event.description}} </ion-label><br>
-
-          <ion-label>date: {{event.date}} </ion-label>
+          
           <ion-col size="4">
-            <ion-img class="events-img" src="assets/images1.jpg"></ion-img>
+
           </ion-col>
         </ion-row>
+        <ion-item>
+          <ion-label>location: {{event.location}} </ion-label><br>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>description: {{event.description}} </ion-label><br>
+        </ion-item>
+        <ion-item>
+          <ion-label>date: {{event.date}} </ion-label>
+        </ion-item>
       </ion-grid>
     </ion-card>
   </ion-list>
 
-  <ion-fab *ngIf="appStorage.getItem('role')==='artisan'" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab *ngIf="appStorage.getItem('role')==='artisan' || appStorage.getItem('role')==='admin'" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button href="/events/add">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
