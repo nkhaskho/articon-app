@@ -29,7 +29,15 @@
             <ion-label position="stacked">Password</ion-label>
             <ion-input [(ngModel)]="user.password" type="password"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Region</ion-label>
+            <ion-select [(ngModel)]="user.region" placeholder="Select role">
 
+              <ion-select-option *ngFor="let region of regions" value="{{region}}">
+                {{ region }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
           <ion-item>
             <ion-label position="stacked">Role</ion-label>
             <ion-select [(ngModel)]="user.role" placeholder="Select role">

@@ -5,7 +5,7 @@ export class User {
     username: string = "";
     email: string = "";
     fullname: string = "";
-    region: string = "";
+    region: string = "tunis";
     registration: string = "";
     password: string = "";
     role: UserRole = UserRole.CLIENT;

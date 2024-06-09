@@ -16,6 +16,11 @@ export class SignupPage implements OnInit {
 
   user: User = new User();
   message: string = "";
+  regions = [
+    "Tunis",
+    "Ariana",
+    "Jendouba"
+  ];
 
   constructor(private authService: AuthService, private menuCtrl: MenuController) { }
 
