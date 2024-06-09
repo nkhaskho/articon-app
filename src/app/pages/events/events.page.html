@@ -49,7 +49,9 @@
           <ion-label>date: {{event.date}} </ion-label>
         </ion-item>
         <video width="320" height="240" controls>
-          <source src="{{event.video}}">
+          <source src="{{event.video}}" type="video/webm">
+          <source src="{{event.video}}" type="video/mp4">
+          <source src="{{event.video}}" type="video/ogg">
         Your browser does not support the video tag.
         </video> 
       </ion-grid>
