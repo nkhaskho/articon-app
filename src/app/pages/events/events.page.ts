@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, MenuController, IonList, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonLabel, IonItem, IonFab, IonFabButton, IonIcon, IonInput, IonImg, IonGrid, IonRow, IonCol, IonBadge } from '@ionic/angular/standalone';
 import { add, addSharp, search, searchSharp } from "ionicons/icons";
-import {  CapacitorVideoPlayer } from 'capacitor-video-player';
 import { addIcons } from 'ionicons';
 import { EventService } from 'src/app/services/events/event.service';
 import { Event } from 'src/app/models/event';
@@ -18,6 +17,7 @@ import { Event } from 'src/app/models/event';
 export class EventsPage implements OnInit {
 
   events: Event[] = [];
+  private videoPlayer: any;
   appStorage = localStorage;
 
   constructor(private menuCtrl: MenuController, private eventService: EventService) { 
@@ -35,4 +35,5 @@ export class EventsPage implements OnInit {
 
 
   }
+
 }
