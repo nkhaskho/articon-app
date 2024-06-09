@@ -43,7 +43,10 @@ export class LoginPage implements OnInit {
         // GET /api/users/{id}
         this.userService.getUserById(user_id).toPromise()
         .then(user => {
-          if (user) localStorage.setItem("role", user?.role)
+          if (user) {
+            localStorage.setItem("role", user?.role)
+            localStorage.setItem("username", user.username)
+          }
         })
         this.router.navigate(["/home"])
       }})

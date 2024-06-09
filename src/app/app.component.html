@@ -4,7 +4,7 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Articon</ion-list-header>
-          <ion-note>&#64;{{appStorage.getItem('role')}}</ion-note>
+          <ion-note>&#64;{{appStorage.getItem('username')}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item *ngIf="appStorage.getItem('role')===p.role || p.role==='all'" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
