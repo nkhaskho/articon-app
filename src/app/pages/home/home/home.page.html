@@ -11,8 +11,32 @@
     </ion-toolbar>
   </ion-header>
   <ion-item>
-    <ion-label>Welcome {{appStorage.getItem("username")}}!</ion-label>
+    <ion-label>Welcome <b>{{appStorage.getItem("username")}}</b>!</ion-label>
   </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{users.length}}</ion-card-subtitle>
+      <ion-card-title>
+        <a href="/home">Artisans</a>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{products.length}}</ion-card-subtitle>
+      <ion-card-title>
+        <a href="/products">Products</a>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{events.length}}</ion-card-subtitle>
+      <ion-card-title routerLink="/events">
+        <a href="/events">Events</a>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
 
 
