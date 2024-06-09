@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/inbox',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -55,6 +55,11 @@ export const routes: Routes = [
     path: 'products/:id/edit',
     loadComponent: () => import('./pages/products/edit-product/edit-product.page').then( m => m.EditProductPage)
   },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home/home.page').then( m => m.HomePage)
+  },
+
 
 
 ];

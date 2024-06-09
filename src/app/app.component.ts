@@ -17,13 +17,13 @@ export class AppComponent {
   appStorage = localStorage;
 
   public appPages = [
-    { title: 'Home', url: '/folder/home', icon: 'home', role: 'all' },
+    { title: 'Home', url: '/home', icon: 'home', role: 'all' },
     { title: 'Profile', url: '/profile', icon: 'person', role: 'all' },
     { title: 'Products', url: '/products', icon: 'cart', role: 'all' },
     { title: 'Events', url: '/events', icon: 'archive', role: 'all' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart', role: 'all' },
     { title: 'Categories', url: '/categories', icon: 'apps', role: 'admin' },
-    { title: 'Administration', url: '/folder/administration', icon: 'settings', role: 'admin' },
+    { title: 'Workshops', url: '/workshop', icon: 'settings', role: 'all' },
 
   ];
 

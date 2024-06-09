@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
         .then(user => {
           if (user) localStorage.setItem("role", user?.role)
         })
-        this.router.navigate(["/"])
+        this.router.navigate(["/home"])
       }})
     .catch(err => console.log)
     
