@@ -21,9 +21,13 @@
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
   </ion-card>
+  <br>
+  <ion-item>
+    <ion-label><b>Reviews</b></ion-label>
+  </ion-item>
   <ion-card *ngFor="let review of reviews">
     <ion-card-header>
-      <ion-card-subtitle>{{ review.user }}</ion-card-subtitle>
+      <ion-card-subtitle>Review {{ review.user }}</ion-card-subtitle>
       <ion-card-title>
         <ion-icon name="star-outline"></ion-icon>
         <ion-icon name="star-outline"></ion-icon>
