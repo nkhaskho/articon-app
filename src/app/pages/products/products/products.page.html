@@ -39,8 +39,8 @@
         </ion-row>
         <ion-row>
           <ion-button color="medium" href="/products/{{product.id}}">Details</ion-button>
-          <ion-button color="secondary" href="/products/{{product.id}}/edit">Edit</ion-button>
-          <ion-button color="danger" (click)="delete(product.id)">Delete</ion-button>
+          <ion-button color="secondary" *ngIf="appStorage.getItem('role')==='artisan' || appStorage.getItem('role')==='admin'" href="/products/{{product.id}}/edit">Edit</ion-button>
+          <ion-button color="danger" *ngIf="appStorage.getItem('role')==='artisan' || appStorage.getItem('role')==='admin'" (click)="delete(product.id)">Delete</ion-button>
         </ion-row>
       </ion-grid>
       
